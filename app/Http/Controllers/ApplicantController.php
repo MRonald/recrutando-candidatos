@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Applicant;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
-class JobController extends Controller
+class ApplicantController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        return Job::all();
+        return Applicant::all();
     }
 
     /**
@@ -25,27 +26,27 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        Job::create($request->all());
+        Applicant::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Applicant  $applicant
      * @return \Illuminate\Http\Response
      */
     public function show(int $id)
     {
-        return Job::findOrFail($id);
+        return Applicant::findOrFail($id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Applicant  $applicant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy(Applicant $applicant)
     {
         //
     }

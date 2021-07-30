@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/v1')->group(function () {
     Route::apiResource('/jobs', 'App\Http\Controllers\JobController');
+    Route::apiResource('/applicants', 'App\Http\Controllers\ApplicantController');
 });
