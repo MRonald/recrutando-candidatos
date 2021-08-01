@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\In;
 
 class JobController extends Controller
 {
@@ -45,8 +46,9 @@ class JobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy(int $id)
     {
-        //
+        $job = Job::findOrFail($id);
+        $job->delete();
     }
 }
