@@ -15,4 +15,9 @@ class Applicant extends Model
         'localization',
         'level'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }

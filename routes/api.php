@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/v1')->group(function () {
-    Route::apiResource('/jobs', 'App\Http\Controllers\JobController');
+    Route::prefix('/jobs')->group(function () {
+        Route::apiResource('/', 'App\Http\Controllers\JobController');
+        Route::get('/{idJob}/candidatures/ranking', ['App\Http\Controllers\CandidatureController', 'ranking']);
+    });
     Route::apiResource('/applicants', 'App\Http\Controllers\ApplicantController');
     Route::apiResource('/candidatures', 'App\Http\Controllers\CandidatureController');
 });

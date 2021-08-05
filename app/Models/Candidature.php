@@ -14,6 +14,11 @@ class Candidature extends Model
         'applicant_id'
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
+
     public function getJob()
     {
         return $this->hasOne(Job::class);
